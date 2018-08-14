@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Index</title>
+	
+<link rel="stylesheet" type="text/css" href="index.css">
+
+</head>
+<body>
+<div class="main">
+		<form NAME="toget_the_username">
+			<INPUT TYPE="hidden" NAME="temp">
+		</form>
+<center>
+<table>
+    <td>
+		<form  name="put_to_java_user_profile" method="doPost" action="./uprofile">
+			<input  type="hidden"  name="username"/>
+			<input id="search-submit" type="submit" class="button" style="vertical-align:middle" value="User Profile" />
+		</form>
+		
+	</td>
+    <td>
+			
+		<form name="put_to_java_unsolved"method="doPost" action="./unsolve">
+			<input type="hidden"  name="username"/>
+			<input id="search-submit" type="submit" class="button" style="vertical-align:middle" value="Unsolved" />
+		</form>
+	</td>
+    <td>
+			
+		<form name="put_to_java_tag_problems"method="doPost" action="./problem_tags_full">
+			<input type="hidden"  name="username"/>	
+			<input id="search-submit" type="submit" class="button" style="vertical-align:middle" value="tags->problems" />
+		</form>
+	</td>
+	
+	<td>
+			
+		<a href="./upcoming_events">
+		<button class="button" style="vertical-align:middle" >Upcoming Events</button>
+		</a>
+		
+	</td>
+	
+  </tr>
+</table>
+	</center>
+</div>
+
+
+
+
+<SCRIPT LANGUAGE="javascript">
+
+var locate = window.location
+document.toget_the_username.temp.value = locate
+
+var text = document.toget_the_username.temp.value
+
+function delineate(str)
+{
+takeindex = str.indexOf("=") + 1;
+return(str.substring(takeindex,str.length));
+}
+
+
+var gotusername = delineate(text)
+document.put_to_java_user_profile.username.value =gotusername
+document.put_to_java_unsolved.username.value = gotusername
+document.put_to_java_tag_problems.username.value = gotusername
+
+</SCRIPT>
+
+
+
+
+
+</body>
+</html>
